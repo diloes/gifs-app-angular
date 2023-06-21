@@ -1,0 +1,22 @@
+<div class="bg-dark border-right p-3" id="sidebar">
+  <h3 class="text-light">GifsApp</h3>
+  <hr class="text-light" />
+
+  <div class="list-group list-reset">
+    <button
+      *ngFor="let tag of tags"
+      (click)="searchTag(tag)"
+      class="list-group-item list-group-item-action"
+    >
+      {{ tag | titlecase }}
+    </button>
+
+    <button
+      *ngIf="tags.length > 0"
+      (click)="resetTagsHistory()"
+      class="btn btn-outline-danger mt-4"
+    >
+      Reset
+    </button>
+  </div>
+</div>
